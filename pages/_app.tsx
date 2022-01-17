@@ -10,6 +10,7 @@ import { Title } from '@/components/title';
 import socialCardLarge from '@/assets/images/social-card-large.png';
 
 import type { AppPropsWithLayout } from '@/types/app.type';
+import { AuthProvider } from '@/context/AuthContext';
 
 const progress = new ProgressBar({
     size: 2,
@@ -88,9 +89,11 @@ const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
                     content={`https://f-instagram-clone.com${socialCardLarge}`}
                 />
             </Head>
-            <Layout {...layoutProps}>
-                <Component {...pageProps} />
-            </Layout>
+            <AuthProvider>
+                <Layout {...layoutProps}>
+                    <Component {...pageProps} />
+                </Layout>
+            </AuthProvider>
         </>
     );
 };

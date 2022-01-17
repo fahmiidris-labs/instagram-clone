@@ -10,6 +10,8 @@ import { Main } from '@/components/main';
 import { AppLayout } from '@/components/templates/app-layout';
 
 import type { NextPageWithLayout } from '@/types/app.type';
+import { useAuthContext } from '@/hooks/useAuthContext';
+import { Link } from '@/components/atoms/link';
 
 type TContinueWithFacebook = {
     setContinueWithFacebook: (value: boolean) => void;
@@ -95,13 +97,13 @@ const links: { title: string; href: string }[] = [
 ];
 
 const Home: NextPageWithLayout = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const { state } = useAuthContext();
 
-    if (!isLoggedIn) {
+    if (!state.isLoggedIn) {
         return <NotLoggedIn />;
     }
 
-    return <div>Home</div>;
+    return <Main className="container pt-[70px]">Home</Main>;
 };
 
 const NotLoggedIn = () => {
@@ -110,16 +112,18 @@ const NotLoggedIn = () => {
     const setContinueWithFacebook = (value: boolean) => {
         setWithFacebook(value);
     };
+
     return (
         <Main className="container">
             <div className="flex items-center justify-center min-h-screen">
-                <div className="grid grid-cols-2 gap-4">
-                    <div>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="hidden md:block">
                         <div className="relative h-[600px]">
                             <Image
                                 src={iphone}
                                 alt="Mockup"
                                 layout="fill"
+                                priority={true}
                                 className="object-cover object-center"
                             />
                         </div>
@@ -205,6 +209,8 @@ const NotLoggedIn = () => {
 const ContinueWithFacebook = ({
     setContinueWithFacebook
 }: TContinueWithFacebook) => {
+    const { dispatch } = useAuthContext();
+
     return (
         <div className="flex flex-col items-center justify-center p-8">
             <h1 className="text-5xl font-semibold font-instagram">Instagram</h1>
@@ -219,6 +225,15 @@ const ContinueWithFacebook = ({
                 </div>
                 <button
                     type="button"
+                    onClick={() =>
+                        dispatch({
+                            type: 'LOGIN_SUCCESS',
+                            payload: {
+                                id: 1,
+                                name: 'Fahmi Idris'
+                            }
+                        })
+                    }
                     className="px-6 py-1 text-sm text-white rounded bg-sky-500"
                 >
                     Continue as _fahmiidris.a
@@ -305,9 +320,9 @@ const ContinueWithoutFacebook = ({
                         <span>Log in with Facebook</span>
                     </button>
 
-                    <a href="#" className="text-xs">
+                    <Link href="/forgot-password" className="text-xs">
                         Forgot Password?
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
