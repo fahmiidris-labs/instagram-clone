@@ -24,7 +24,7 @@ export const Navbar = () => {
                                     <div className="relative">
                                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                                             <button
-                                                type="submit"
+                                                type="button"
                                                 className="p-1 focus:outline-none focus:shadow-outline"
                                             >
                                                 <HiOutlineSearch className="w-5 h-5 text-gray-500" />
