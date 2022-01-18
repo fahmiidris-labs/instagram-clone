@@ -97,6 +97,45 @@ const links: { title: string; href: string }[] = [
     }
 ];
 
+const suggesionlinks: { title: string; href: string }[] = [
+    {
+        title: 'About',
+        href: '#'
+    },
+    {
+        title: 'Help',
+        href: '#'
+    },
+    {
+        title: 'Press',
+        href: '#'
+    },
+    {
+        title: 'API',
+        href: '#'
+    },
+    {
+        title: 'Privacy',
+        href: '#'
+    },
+    {
+        title: 'Terms',
+        href: '#'
+    },
+    {
+        title: 'Top Accounts',
+        href: '#'
+    },
+    {
+        title: 'Hastags',
+        href: '#'
+    },
+    {
+        title: 'Locations',
+        href: '#'
+    }
+];
+
 const suggestions: { username: string; desc: string; image: string }[] = [
     {
         username: '_skaiu187',
@@ -181,7 +220,7 @@ const Home: NextPageWithLayout = () => {
                                     See All
                                 </Link>
                             </div>
-                            <div className="flex flex-col pt-5 space-y-3">
+                            <div className="flex flex-col py-5 space-y-3">
                                 {suggestions.map((suggestion, idx) => (
                                     <div
                                         key={idx}
@@ -215,6 +254,23 @@ const Home: NextPageWithLayout = () => {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="flex flex-col items-start justify-start max-w-2xl py-3 mx-auto text-gray-400">
+                                <ul className="flex flex-wrap justify-start">
+                                    {suggesionlinks.map((link, idx) => (
+                                        <li key={idx}>
+                                            <a
+                                                href={link.href}
+                                                className="px-1 text-[10px]"
+                                            >
+                                                {link.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <span className="pt-5 text-xs uppercase">
+                                    © 2022 Instagram Clone from Fahmi Idris
+                                </span>
                             </div>
                         </div>
                     </div>
