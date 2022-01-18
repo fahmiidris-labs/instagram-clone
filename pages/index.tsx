@@ -97,6 +97,29 @@ const links: { title: string; href: string }[] = [
     }
 ];
 
+const suggestions: { username: string; desc: string; image: string }[] = [
+    {
+        username: '_skaiu187',
+        desc: 'Followed by Agung',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+    },
+    {
+        username: 'jhon_edward12',
+        desc: 'Followed by Hapsah',
+        image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+    },
+    {
+        username: 'siti_alisai1212',
+        desc: 'Followed by Gundar',
+        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+    },
+    {
+        username: 'Fiktori',
+        desc: 'Followed by _skaiu187',
+        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+    }
+];
+
 const Home: NextPageWithLayout = () => {
     const { state } = useAuthContext();
 
@@ -105,16 +128,96 @@ const Home: NextPageWithLayout = () => {
     }
 
     return (
-        <Main className="container pt-24">
-            <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-2">
+        <Main className="container relative pt-24">
+            <div className="grid grid-cols-12 gap-8">
+                <div className="col-span-8">
                     <Stories />
+                    <div className="min-h-screen pt-5">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Dolore id possimus omnis molestias? Rerum
+                        repellendus eveniet dolorem explicabo facere, sapiente
+                        esse asperiores obcaecati, molestiae labore vitae est
+                        itaque, mollitia dolorum.
+                    </div>
                 </div>
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                    consequuntur sint totam ratione nisi deleniti blanditiis
-                    cumque id? Officia consectetur est laborum reiciendis
-                    accusantium dolorum neque iste inventore fugit ad.
+                <div className="w-full col-span-4">
+                    <div className="sticky top-[120px]">
+                        <div>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-4">
+                                    <div className="relative aspect-square h-[60px] rounded-full overflow-hidden">
+                                        <Image
+                                            src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=785&q=80"
+                                            alt="Profile Pict"
+                                            layout="fill"
+                                            className="object-cover object-center"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-gray-800">
+                                            _fahmiidris.a
+                                        </h3>
+                                        <p className="text-sm text-gray-500">
+                                            Fahmi Idris A
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button
+                                        type="button"
+                                        className="text-sm text-sky-500 "
+                                    >
+                                        Switch
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="pt-5">
+                            <div className="flex items-center justify-between">
+                                <h3 className="text-sm font-semibold text-gray-500">
+                                    Suggestions For You
+                                </h3>
+                                <Link href="/" className="text-xs">
+                                    See All
+                                </Link>
+                            </div>
+                            <div className="flex flex-col pt-5 space-y-3">
+                                {suggestions.map((suggestion, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="flex items-center justify-between"
+                                    >
+                                        <div className="flex items-center space-x-4">
+                                            <div className="relative aspect-square h-[30px] rounded-full overflow-hidden">
+                                                <Image
+                                                    src={suggestion.image}
+                                                    alt={suggestion.username}
+                                                    layout="fill"
+                                                    className="object-cover object-center"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-sm font-semibold text-gray-800">
+                                                    {suggestion.username}
+                                                </h3>
+                                                <p className="text-xs text-gray-500">
+                                                    {suggestion.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button
+                                                type="button"
+                                                className="text-xs text-sky-500 "
+                                            >
+                                                Follow
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Main>
