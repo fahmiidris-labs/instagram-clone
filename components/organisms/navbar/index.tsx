@@ -41,7 +41,7 @@ export const Navbar = () => {
                                 </div>
 
                                 <div className="basis-1/3">
-                                    <div className="flex items-center space-x-4">
+                                    <div className="flex items-center justify-end space-x-4">
                                         <button type="button">
                                             <svg
                                                 aria-label="Home"
