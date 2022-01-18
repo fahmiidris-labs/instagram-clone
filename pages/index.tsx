@@ -12,6 +12,7 @@ import { AppLayout } from '@/components/templates/app-layout';
 import type { NextPageWithLayout } from '@/types/app.type';
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { Link } from '@/components/atoms/link';
+import { Stories } from '@/components/parts/home/stories';
 
 type TContinueWithFacebook = {
     setContinueWithFacebook: (value: boolean) => void;
@@ -103,7 +104,21 @@ const Home: NextPageWithLayout = () => {
         return <NotLoggedIn />;
     }
 
-    return <Main className="container pt-[70px]">Home</Main>;
+    return (
+        <Main className="container pt-24">
+            <div className="grid grid-cols-3 gap-4">
+                <div className="col-span-2">
+                    <Stories />
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                    consequuntur sint totam ratione nisi deleniti blanditiis
+                    cumque id? Officia consectetur est laborum reiciendis
+                    accusantium dolorum neque iste inventore fugit ad.
+                </div>
+            </div>
+        </Main>
+    );
 };
 
 const NotLoggedIn = () => {
