@@ -20,7 +20,7 @@ export const Navbar = () => {
                                     </Link>
                                 </div>
 
-                                <div className="basis-1/3">
+                                <div className="flex items-center justify-center basis-1/3">
                                     <div className="relative">
                                         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                                             <button
