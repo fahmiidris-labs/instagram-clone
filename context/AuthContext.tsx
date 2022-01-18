@@ -18,13 +18,13 @@ type TAuthContext = {
 };
 
 const initialState: TInitialState = {
-    // user: null,
-    // isLoggedIn: false
-    user: {
-        id: 1,
-        name: 'Fahmi Idris'
-    },
-    isLoggedIn: true
+    user: null,
+    isLoggedIn: false
+    // user: {
+    //     id: 1,
+    //     name: 'Fahmi Idris'
+    // },
+    // isLoggedIn: true
 };
 
 const mainReducer = ({ user, isLoggedIn }: TInitialState, action: TAction) => {
