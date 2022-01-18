@@ -13,6 +13,7 @@ import type { NextPageWithLayout } from '@/types/app.type';
 import { useAuthContext } from '@/hooks/useAuthContext';
 import { Link } from '@/components/atoms/link';
 import { Stories } from '@/components/parts/home/stories';
+import { Posts } from '@/components/parts/home/posts';
 
 type TContinueWithFacebook = {
     setContinueWithFacebook: (value: boolean) => void;
@@ -171,12 +172,8 @@ const Home: NextPageWithLayout = () => {
             <div className="grid grid-cols-12 gap-8">
                 <div className="col-span-8">
                     <Stories />
-                    <div className="min-h-screen pt-5">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Dolore id possimus omnis molestias? Rerum
-                        repellendus eveniet dolorem explicabo facere, sapiente
-                        esse asperiores obcaecati, molestiae labore vitae est
-                        itaque, mollitia dolorum.
+                    <div className="min-h-screen py-5">
+                        <Posts />
                     </div>
                 </div>
                 <div className="w-full col-span-4">
