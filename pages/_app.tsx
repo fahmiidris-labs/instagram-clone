@@ -65,7 +65,7 @@ const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
                 <meta
                     key="twitter:image"
                     name="twitter:image"
-                    content={`https://f-instagram-clone.com${socialCardLarge}`}
+                    content={`https://f-instagram-clone.vercel.app${socialCardLarge}`}
                 />
                 <meta
                     key="twitter:creator"
@@ -75,7 +75,7 @@ const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
                 <meta
                     key="og:url"
                     property="og:url"
-                    content={`https://f-instagram-clone.com${router.pathname}`}
+                    content={`https://f-instagram-clone.vercel.app${router.pathname}`}
                 />
                 <meta key="og:type" property="og:type" content="article" />
                 <meta
@@ -86,7 +86,7 @@ const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
                 <meta
                     key="og:image"
                     property="og:image"
-                    content={`https://f-instagram-clone.com${socialCardLarge}`}
+                    content={`https://f-instagram-clone.vercel.app${socialCardLarge}`}
                 />
             </Head>
             <AuthProvider>

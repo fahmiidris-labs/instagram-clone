@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Instagram Clone
 
 <p align="center">
-    <img src="https://f-instagram-clone.com/images/preview.png" alt='preview'>
+    <img src="https://f-instagram-clone.vercel.app/images/preview.png" alt='preview'>
 </p>
 
 ## Built Using
